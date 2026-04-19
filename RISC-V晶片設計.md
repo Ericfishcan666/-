@@ -92,7 +92,7 @@ title: RISC-V晶片設計
 
 架構圖如下(簡報裡面有畫質較好的):
 
-![image](https://hackmd.io/_uploads/HJDu3_oBWx.png)
+![image](https://github.com/Ericfishcan666/-/blob/main/1.png)
 
 包含了許多基本元件，待會程式講解會有細部拆解的圖片。
 程式部分主要是由一個rv32im_core.v主程式進行所有零組件的封裝、和許多個圖中的元件的子程式所組成。
@@ -193,7 +193,7 @@ endmodule
 主要功能:
 實作IF/ID管線(暫存器)，這個暫存器紀錄PC address和指令，如此一來他可以允許指令先偷跑，在前一條指令還沒做完之前，就先fetch下一條指令，並儲存在管線中，等到下一個CLK來的時候再進入ID階段。如此一來可以讓指令重疊進行加速。
 IF/ID 的管線沖刷:
-![image](https://hackmd.io/_uploads/SyyG5igI-l.png)
+![image](https://github.com/Ericfishcan666/-/blob/main/%E5%9C%96%E7%89%873.png?raw=true)
 在reset或是flush_IFID 訊號為1時就會沖刷管線。
 
 > 什麼時候會 flush_IFID ?
@@ -226,9 +226,9 @@ endmodule
 
 ## 4. inst_dec.v (指令解碼器)
 主要功能:
-![image](https://hackmd.io/_uploads/HkmxwctIZx.png)
+![image](https://github.com/Ericfishcan666/-/blob/main/2.png?raw=true)
 
-![image](https://hackmd.io/_uploads/HkPUoMZ8Zl.png)
+![image](https://github.com/Ericfishcan666/-/blob/main/%E5%9C%96%E7%89%874.png?raw=true)
 
 這個程式主要是把送進來的inst拆解成不同的片段(MicroInstruction)，來做為下一階段controller和其他地方做使用(拆解出來的分段不一定都會用到)。
 
